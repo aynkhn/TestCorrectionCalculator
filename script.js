@@ -12,8 +12,14 @@ function compute() {
     let total = Number(document.getElementById("TP").value)
     let corrections_score = (Number(document.getElementById("SC").value) / 100)
     
-    let full_new_score = test_correction_calculator(total, earned, corrections_score)
-    let new_score = roundToDecimalPlaces(full_new_score, 8)
+    let new_score = 0
+
+    if (total === 0) {
+        new_score = "Error: points cannot be zero!"
+    } else {
+        let full_new_score = test_correction_calculator(total, earned, corrections_score)
+        new_score = roundToDecimalPlaces(full_new_score, 8)
+    }
 
     document.getElementById("output").innerText = new_score
 }
