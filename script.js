@@ -1,7 +1,19 @@
-let total = 29
-let earned = 26.67
-let corrections_score = 5 / 6
+function roundToDecimalPlaces(num, places) {
+    const factor = Math.pow(10, places);
+    return Math.round(num * factor) / factor;
+}
 
 function test_correction_calculator(total, earned, corrections_score){
-    return ((((((total - earned) / 2) * corrections_score) + earned) / total) * 100)
+    return ((((((total - earned) / 2) * corrections_score) + earned) / total) * 100) // find new score after corrections
+}
+
+function compute() {
+    let earned = Number(document.getElementById("ES").value) // read input values of "x" and get values
+    let total = Number(document.getElementById("TP").value)
+    let corrections_score = (Number(document.getElementById("SC").value) / 100)
+    
+    let full_new_score = test_correction_calculator(total, earned, corrections_score)
+    let new_score = roundToDecimalPlaces(full_new_score, 8)
+
+    document.getElementById("output").innerText = new_score
 }
