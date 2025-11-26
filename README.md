@@ -1,3 +1,5 @@
+aynkhn.github.io/TestCorrectionCalculator
+
 Calculator built for my math teacher to find scores after "test correction policy".
 
 The policy states:
