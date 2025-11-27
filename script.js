@@ -21,5 +21,10 @@ function compute() {
         new_score = roundToDecimalPlaces(full_new_score, 8)
     }
 
-    document.getElementById("output").innerText = new_score
+    if (typeof new_score === "number") {
+        document.getElementById("output").innerText = new_score + "%"
+    } else {
+        document.getElementById("output").innerText = new_score
+    }
+    
 }
