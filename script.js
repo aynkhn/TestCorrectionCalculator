@@ -15,7 +15,7 @@ function compute() {
     let new_score = 0
 
     if (total === 0) {
-        new_score = "Error: points cannot be zero!"
+        new_score = "Error: points can't be zero. Oooooo shoot."
     } else {
         let full_new_score = test_correction_calculator(total, earned, corrections_score)
         new_score = roundToDecimalPlaces(full_new_score, 8)
